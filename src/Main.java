@@ -1,28 +1,31 @@
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
 
-        String message = "Hello World" + "!!";
+        // the old syntax
+        int[] numbers = new int[5];
+        numbers[0] = 1;
+        numbers[1] = 2;
+        //numbers[10] = 3; Exception out of bounds
 
-        // it creates a new string and not mutates the original message variable
-        // replace is a pure fn
-        System.out.println(message.replace("!", "&"));
-        System.out.println("the real message kept unchanged: " +  message);
-        System.out.println(message.endsWith("sky"));
-        System.out.println(message.indexOf("now"));
-        // the original string is immutable in java
+        System.out.println(numbers); // a reference to the array [I@65ab7765
+        // to print the real values in a string representation you need to do this
 
-        System.out.println("///////////////////////////////////////////");
-        // you can use "\" the backslash to escape the "" to use it in the text
-        // to print it in the code
-        String anotherMessage = "Hello \"ahmed\"";
-        System.out.println(anotherMessage);
+        System.out.println(Arrays.toString(numbers)); // [1, 2, 0, 0, 0]
 
-        //if we need to escape the \ itself to store a path to a directory in windows
-        String path = "c:\\Windows\\..";
-        System.out.println(path);
+        // arrays are with fixed size in java, fixed size once created never changed same datatype
+
+        int[] newNumbers = { 2, 3, 4, 1, 5};
+        //newNumbers[5] = 2; // Exception out of bounds
+
+        Arrays.sort(newNumbers); // impure fn, it mutates the original array
+
+        System.out.println(Arrays.toString(newNumbers));
+
+
 
     }
 }
