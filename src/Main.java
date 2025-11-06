@@ -6,10 +6,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new  Scanner(System.in);
+        /*
+          making a new small project to calculate the monthly mortgage
+         */
 
-        int inputtedNo =  scanner.nextInt();
+        final byte MONTHS_IN_YEAR = 12;
+        final byte PERCENT = 100;
 
-        System.out.println(inputtedNo * 100);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("/** calculate your monthly mortgage **/");
+        System.out.print("Principal: ");
+        int principal = sc.nextInt();
+
+        System.out.print("Annual Interest Rate: ");
+        float annualInterestRate = sc.nextFloat();
+
+        System.out.print("Period: ");
+        short period = sc.nextShort();
+
+        float monthlyRate = annualInterestRate / MONTHS_IN_YEAR / PERCENT;
+        float NoOfPayments = period * MONTHS_IN_YEAR;
+        float onePlusRToThePowerOfN =  (float)Math.pow((1 + monthlyRate), NoOfPayments);
+        float mortgage = principal * ( monthlyRate * onePlusRToThePowerOfN / (onePlusRToThePowerOfN -1) );
+
+        System.out.println("Mortgage: " + NumberFormat.getCurrencyInstance().format(mortgage));
     }
 }
