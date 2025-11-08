@@ -11,14 +11,14 @@ public class Main {
 
         System.out.println("If you type quit you end the program");
         System.out.print("please enter any value: ");
-        String inputtedWord =  sc.nextLine();
+        String inputtedWord =  "";
 
 
-        while (!inputtedWord.equalsIgnoreCase("quit")) {
-            System.out.println("I will loop till you write quit");
+        do {
             System.out.print("please enter any value: ");
             inputtedWord = sc.nextLine();
-        }
+            System.out.println(inputtedWord);
+        } while (!inputtedWord.equalsIgnoreCase("quit"));
 
 
 
