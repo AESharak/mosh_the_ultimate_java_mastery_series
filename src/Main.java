@@ -7,16 +7,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Hello World, i => [" + i + ']');
-        }
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("If you type quit you end the program");
+        System.out.print("please enter any value: ");
+        String inputtedWord =  sc.nextLine();
 
 
-        int j = 0;
-        while (j < 5){
-            System.out.println("Hello World, j => [" + j + ']');
-            j++;
+        while (!inputtedWord.equalsIgnoreCase("quit")) {
+            System.out.println("I will loop till you write quit");
+            System.out.print("please enter any value: ");
+            inputtedWord = sc.nextLine();
         }
+
 
 
     }
