@@ -6,23 +6,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String[] fruits = {"Apple", "Mango", "Orange"};
 
-        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < fruits.length; i++)
+            System.out.println(fruits[i]);
 
-        System.out.println("If you type quit you end the program");
-        String inputtedWord =  "";
+        System.out.println("////////////////");
 
+        // this enhanced for or forEach loop is good at writing
+        // for simplicity but has some limitations
+        // 1. we cannot loop backward it's only forward, apple mango orange
+        // and not orange mango apple
+        // 2. we don't have access to the current index, we need it in some cases
+        for (String fruit : fruits){
+            System.out.println(fruit);
+        }
 
-        do {
-            System.out.print("please enter any value: ");
-            inputtedWord = sc.nextLine();
-            if (inputtedWord.equals("pass"))
-                continue;
-            if (inputtedWord.equals("quit"))
-                break;
-
-            System.out.println(inputtedWord);
-        } while (true);
 
 
 
