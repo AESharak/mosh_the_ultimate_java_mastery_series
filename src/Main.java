@@ -7,23 +7,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        /*
-         FizzBuzz game
-         */
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Hello World, i => [" + i + ']');
+        }
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("/* FizzBuzz Game */");
-        System.out.print("Please Enter a Number: ");
-        int inputtedNumber = sc.nextInt();
 
-        if (inputtedNumber % 5 == 0 &&  inputtedNumber % 3 == 0) {
-            System.out.println("FizzBuzz");
-        } else if (inputtedNumber % 5 == 0) {
-            System.out.println("Fizz");
-        } else if (inputtedNumber % 3 == 0) {
-            System.out.println("Buzz");
-        } else {
-            System.out.println(inputtedNumber);
+        int j = 0;
+        while (j < 5){
+            System.out.println("Hello World, j => [" + j + ']');
+            j++;
         }
 
 
